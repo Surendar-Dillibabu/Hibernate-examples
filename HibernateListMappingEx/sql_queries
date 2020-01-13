@@ -1,0 +1,35 @@
+DROP table employee_details;
+
+DROP table dept_details;
+
+DROP table student_details;
+
+DROP table college_details;
+
+drop sequence employee_details_seq;
+
+drop sequence dept_details_seq;
+
+drop sequence college_details_seq;
+
+drop sequence student_details_seq;
+
+create sequence employee_details_seq start with 1 increment by 1 nocache;
+
+create sequence dept_details_seq start with 1 increment by 1 nocache;
+
+create sequence college_details_seq start with 1 increment by 1 nocache;
+
+create sequence student_details_seq start with 1 increment by 1 nocache;
+
+create table dept_details (dept_id number, dept_name varchar2(25), constraint dept_details_pk primary key (dept_id));
+
+create table employee_details(employee_id number, employee_name varchar2(50), salary number, dept_id number, joining_date date,
+constraint employee_details_pk primary key (employee_id),
+constraint employee_details_fk foreign key (dept_id) references dept_details(dept_id));
+
+
+create table college_details(college_id number, college_name varchar2(50), constraint college_details_pk primary key (college_id));
+
+create table student_details(student_id number, student_name varchar2(50), college_id number, constraint student_details_pk primary key (student_id),
+constraint student_details_fk foreign key (college_id) references college_details(college_id));
