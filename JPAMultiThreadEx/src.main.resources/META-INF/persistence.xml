@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	
+	<persistence-unit name="stocks_unit">
+	  <description>Stocks persistence unit</description>
+	  <class>org.hibernate.jpa.HibernatePersistenceProvider</class>
+	  
+	  <properties>
+	    <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver" />
+	    <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@//t5tstsede-scan.sg.gbs.pro:1521/OTH_ORABE.bsella.it" />
+		<property name="javax.persistence.jdbc.user" value="svil_team68" />
+		<property name="javax.persistence.jdbc.password" value="itrisk_oct19" />
+		<!--  The below property will be used to print the sql query in the log -->
+		<property name="hibernate.show_sql" value="true" />
+		<property name="hibernate.hbm2ddl.auto" value="create"/>
+	  </properties>
+	  
+	</persistence-unit>
+	
+</persistence>
